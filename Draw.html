@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>来抽签吧。ヾ(◍°∇°◍)ﾉﾞ</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .bgVideo {
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 覆盖整个容器 */
+  z-index: -1; /* 确保视频在内容下方 */
+  }
+  .name-container {
+    background-color:#8291dc; /* 设置蓝色背景 */
+; /* 设置蓝色背景 */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 使用transform偏移自身的50%来居中 */
+  width: 70%; /* 或者具体的宽度 */
+  height: 60%; /* 或者具体的高度 */
+  /* 其他样式 */
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px; /* 设置边角的圆润度 */
+    opacity:0.5; /*设置50%的透明效果*/
+    z-index: 1; /* 确保内容在视频上方 */
+  }
+  #nameDisplay {
+    position:relative;
+    top:20%;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: rgb(76, 8, 128); /* 设置名字颜色为紫色，以便在蓝色背景上更清晰 */
+  }
+  button {
+    position:relative;
+    top:40%;
+    background-color: #614caf; /* 按钮背景颜色 */
+    color: white; /* 按钮文字颜色 */
+    padding: 3px 20px; /* 按钮内边距 */
+    margin: 10px 0; /* 外边距 */
+    border: 6px; /* 无边框 */
+    border-radius: 6px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时的指针形状 */
+    width: 100px; /* 按钮宽度 */
+    height: 60px; /* 按钮高度 */
+    font-size: 30px /* 设置按钮字体大小 */
+  }
+  /* 鼠标悬停在按钮上时的样式 */
+  button:hover {
+    background-color: #613c8f;
+  }
+  h1 {
+    font-size: 48px; /* 改变标题的字体大小为48像素 */
+  }
+  /* 其他样式... */
+</style>
+</head>
+<body>
+<video autoplay muted loop id="bgVideo" class="bgVideo">
+    <source src="video/「薪炎永燃」.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 video 标签。
+</video>
+<script>
+  window.onload = function() {
+      var video = document.getElementById('bgVideo');
+      document.body.addEventListener('click', function() {
+          video.muted = false;
+      }, false);
+  };
+</script>
+<div class="name-container">
+  <!-- 随机点名器的内容 -->
+</div>
+<div class="name-container">
+    <h1>嘿嘿嘿，今天会是什么呢？</h1>
+    <div id="nameDisplay">点击开始</div>
+    <button id="startButton">开始</button>
+    <button id="stopButton" disabled>停止</button>
+  </div>
+  
+  <script>
+  // 名字列表
+  var names = ["中吉+今天还要努力呀！！", "大吉+运气不戳٩(๑❛ᴗ❛๑)۶", "中吉+去追寻便好，哪怕是片刻的须臾。", "末吉+加油哦(ﾉ´▽｀)ﾉ♪", "中吉+奖励你个表情ヾ(๑╹◡╹)ﾉ","中吉+好好学习(๑´ㅂ`๑) ","中吉+你开心了吗(ﾉ´▽｀)ﾉ♪","中吉+_(¦3」∠)_","末吉+罒ω罒","末吉+〒▽〒","末吉+(╯﹏╰)b","末吉+ o(TωT)o ","末吉+(ಥ﹏ಥ)","末吉+┭┮﹏┭┮","中吉+原神，启动！！！！！","嘻嘻嘻","中吉+普通","中吉+嗨嗨(￣▽￣)／","末吉+(￣▽￣)~*","中吉+想不出来了","中吉+实在想不出什么了","彩蛋:为世上所有的美好而战！","中吉+崩铁，启动！！！","燃起来了","躺平￣ω￣=","谢谢惠顾","线性回归你学了吗？","纳西妲有点撒娇o(*￣3￣)o ","终于要写完了","鸟儿本身没有枷锁，又是什么牵住了我的命运","我们都知道，这世界早已无法拯救。可我们，还是必须成为英雄。","曾经有巨大的梦在这里破壳而出，也有无数的灵魂在这里消融。","嘿嘿嘿嘿hi，嘿嘿嘿嘿嘿额hi，额hi，恶嘿嘿额黑hi","大奖"];
+  var intervalId; // 用于存储setInterval的ID
+  
+  // 开始滚动名字
+  function startRandomNames() {
+    intervalId = setInterval(function() {
+      var randomIndex = Math.floor(Math.random() * names.length);
+      document.getElementById('nameDisplay').innerText = names[randomIndex];
+    }, 100); // 每100毫秒更新一次名字
+  
+    document.getElementById('startButton').disabled = true;
+    document.getElementById('stopButton').disabled = false;
+  }
+  
+  // 停止滚动名字
+  function stopRandomNames() {
+    clearInterval(intervalId);
+  
+    document.getElementById('startButton').disabled = false;
+    document.getElementById('stopButton').disabled = true;
+  }
+  
+  // 给按钮添加事件监听器
+  document.getElementById('startButton').addEventListener('click', startRandomNames);
+  document.getElementById('stopButton').addEventListener('click', stopRandomNames);
+  </script>
+<!-- 随机点名器的JavaScript代码 -->
+
+</body>
+</html>
