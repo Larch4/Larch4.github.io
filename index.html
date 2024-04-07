@@ -2,13 +2,16 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="images/hydro.svg" 
+type="images/x-icon">
+<link rel="shortcut icon" 
+href="images/hydro.svg" type="images/x-icon">
 <title>来抽签吧。ヾ(◍°∇°◍)ﾉﾞ</title>
 <style>
   body, html {
     height: 100%;
     margin: 0;
   }
-
   .bgVideo {
     position: absolute;
   top: 0;
@@ -19,7 +22,7 @@
   z-index: -1; /* 确保视频在内容下方 */
   }
   .name-container {
-    background-color:#8291dc; /* 设置蓝色背景 */
+    background:linear-gradient(to right, #8291dc,#613c8f); /* 设置蓝色背景 */
 ; /* 设置蓝色背景 */
   position: absolute;
   top: 40%;
@@ -31,37 +34,51 @@
     padding: 20px;
     margin: auto;
     text-align: center;
-    border-radius: 15px; /* 设置边角的圆润度 */
+    border-radius: 100px; /* 设置边角的圆润度 */
     opacity:0.5; /*设置50%的透明效果*/
-    z-index: 1; /* 确保内容在视频上方 */
+    z-index: 0; /* 确保内容在视频上方 */
   }
   #nameDisplay {
     position:relative;
-    top:20%;
+    top:15%;
     margin-bottom: 20px;
     font-size: 2em;
-    color: rgb(76, 8, 128); /* 设置名字颜色为紫色，以便在蓝色背景上更清晰 */
+    background: linear-gradient(to right, red,blue);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    color: transparent;
   }
   button {
     position:relative;
-    top:40%;
-    background-color: #614caf; /* 按钮背景颜色 */
+    top:30%;
+    background:linear-gradient(to left, rgb(86, 46, 231), rgb(160, 25, 227), rgb(159, 123, 175));
+    background-size:  300% 100%;
     color: white; /* 按钮文字颜色 */
-    padding: 3px 20px; /* 按钮内边距 */
-    margin: 10px 0; /* 外边距 */
-    border: 6px; /* 无边框 */
-    border-radius: 6px; /* 圆角边框 */
+    padding: 3px 15px; /* 按钮内边距 */
+    margin: 70px; /* 外边距 */
+    border: none; /* 无边框 */
+    border-radius: 30px; /* 圆角边框 */
     cursor: pointer; /* 鼠标悬停时的指针形状 */
-    width: 100px; /* 按钮宽度 */
+    width: 200px; /* 按钮宽度 */
     height: 60px; /* 按钮高度 */
-    font-size: 30px /* 设置按钮字体大小 */
+    font-size: 30px;/* 设置按钮字体大小 */
+    transition: background-position 0.5s ease; /* 添加过渡效果使颜色平滑变化 */
   }
-  /* 鼠标悬停在按钮上时的样式 */
   button:hover {
-    background-color: #613c8f;
-  }
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.767);
+    background-position:100% 0; /* 按钮颜色淡化 */
+}
+  button:active {
+    background-position:200% 0;
+  
+}
+  /* 鼠标悬停在按钮上时的样式 */
+  
   h1 {
-    font-size: 48px; /* 改变标题的字体大小为48像素 */
+    font-size: 60px; /* 改变标题的字体大小为48像素 */
   }
   /* 其他样式... */
 </style>
