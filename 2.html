@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <link rel="icon" href="image/hydro.svg" 
+        type="images/x-icon">
+    <link rel="shortcut icon" 
+        href="image/github-fill bule.svg" type="images/x-icon">
+    <link href="css/style4.css" rel="stylesheet" type="text/css">
+    <link href="css/style3.css" rel="stylesheet" type="text/css">
+    <link href="css/button.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>怀远碧茶</title>
+
+    <body>
+        <div class="shell">
+            <img src="image/19.jpg" alt="" class="cover">
+                <div class="head">
+                <div class="data">
+                <div class="title1">怀远碧茶<span>Larch2352</span></div>
+                <div class="title2">若黑暗中没有奇迹与魔法降临,我便用爱这道光照亮</div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="tags">
+                <span class="tag">上中</span>
+                <span class="tag">肉桂</span>
+                <span class="tag">烟灰</span>
+                <span class="tag">荧光</span>
+                <span class="tag">佩里</span>
+                <span class="tag">冰菓</span>
+                <span class="tag">白嚓</span>
+                <span class="tag">猕猴</span>
+            </div>
+            <div class="introduce">
+                <p>
+                    寂静的森林里，树木窃窃私语，萤火虫的光不再温暖。鹅卵石铺就的小路上布满了多少人的脚印？我在这里轻轻吟颂着温暖的童话。带着怀表的兔子发着光，领着美丽的爱丽丝，进入神秘的扑克牌仙境，奇妙的经历只是一个梦而已，一切都会结束。冰冷的城墙述说着一个又一个故事，湛蓝的大海是人鱼的眼泪，透明的水晶棺是公主的幸福笑靥，梦幻的蔷薇花翩飞，我的童话又在哪里？
+                </p>
+            </div>
+            <div class="button"><section>
+                <ul>
+                <li title="GitHub"><a target="_blank" href="https://github.com/Larch4"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li title="Bilibili"><a target="_blank" href="https://space.bilibili.com/523637242?spm_id_from=333.1007.0.0"><i class="fab fa-bilibili" aria-hidden="true"></i></a></li>
+                <li title="QQ"><a target="_blank" href="https://im.qq.com"><i class="fab fa-qq" aria-hidden="true"></i></a></li>
+                <li title="Outlook"><a href="mailto:tu4tu23min@outlook.com"><i class="far fa-envelope" aria-hidden="true"></i></a></li>
+                </ul>
+              </section></div>
+        </div>
+    </div>
+    <audio id="background-music" loop>
+        <source src="music/花守ゆみり,白石晴香,安野希世乃 - 明日でいいから (V0).mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+      </audio>
+    
+      <button onclick="playMusic()">哟</button>
+    
+      <script>
+        function playMusic() {
+          var music = document.getElementById('background-music');
+          // 检查音乐是否已经在播放
+          if (music.paused) {
+            music.play();
+          } else {
+            music.pause(); // 如果音乐正在播放，点击按钮将暂停音乐
+          }
+        }
+      </script>
+    </body>
+</html>

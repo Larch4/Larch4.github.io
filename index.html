@@ -1,138 +1,177 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>ᯤ²ᴳ</title>
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-  }
-  .bgVideo {
-    position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 覆盖整个容器 */
-  z-index: -1; /* 确保视频在内容下方 */
-  }
-  .name-container {
-    background:linear-gradient(to right, #8291dc,#613c8f); /* 设置蓝色背景 */
-; /* 设置蓝色背景 */
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 使用transform偏移自身的50%来居中 */
-  width: 70%; /* 或者具体的宽度 */
-  height: 60%; /* 或者具体的高度 */
-  /* 其他样式 */
-    padding: 20px;
-    margin: auto;
-    text-align: center;
-    border-radius: 100px; /* 设置边角的圆润度 */
-    opacity:0.5; /*设置50%的透明效果*/
-    z-index: 0; /* 确保内容在视频上方 */
-  }
-  #nameDisplay {
-    position:relative;
-    top:15%;
-    margin-bottom: 20px;
-    font-size: 2em;
-    background: linear-gradient(to right, red,blue);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    color: transparent;
-  }
-  button {
-    position:relative;
-    top:30%;
-    background:linear-gradient(to left, rgb(86, 46, 231), rgb(160, 25, 227), rgb(159, 123, 175));
-    background-size:  300% 100%;
-    color: white; /* 按钮文字颜色 */
-    padding: 3px 15px; /* 按钮内边距 */
-    margin: 70px; /* 外边距 */
-    border: none; /* 无边框 */
-    border-radius: 30px; /* 圆角边框 */
-    cursor: pointer; /* 鼠标悬停时的指针形状 */
-    width: 200px; /* 按钮宽度 */
-    height: 60px; /* 按钮高度 */
-    font-size: 30px;/* 设置按钮字体大小 */
-    transition: background-position 0.5s ease; /* 添加过渡效果使颜色平滑变化 */
-  }
-  button:hover {
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.767);
-    background-position:100% 0; /* 按钮颜色淡化 */
-}
-  button:active {
-    background-position:200% 0;
-    border:4px solid black;
-}
-  /* 鼠标悬停在按钮上时的样式 */
-  
-  h1 {
-    font-size: 60px; /* 改变标题的字体大小为48像素 */
-  }
-  /* 其他样式... */
-</style>
-</head>
-<body>
-<video autoplay muted loop id="bgVideo" class="bgVideo">
-    <source src="video/「薪炎永燃」.mp4" type="video/mp4">
-    您的浏览器不支持 HTML5 video 标签。
-</video>
-<script>
-  window.onload = function() {
-      var video = document.getElementById('bgVideo');
-      document.body.addEventListener('click', function() {
-          video.muted = false;
-      }, false);
-  };
-</script>
-<div class="name-container">
-  <!-- 随机点名器的内容 -->
-</div>
-<div class="name-container">
-    <h1>᯽ᮮᮯ᮱ᮼ᯽</h1>
-    <div id="nameDisplay">⌚点击开始⌚</div>
-    <button id="startButton">₿开始₿</button>
-    <button id="stopButton" disabled>₿停止₿</button>
-  </div>
-  
-  <script>
-  // 名字列表
-  var names = ["中吉+今天还要努力呀！！", "大吉+运气不戳٩(๑❛ᴗ❛๑)۶", "中吉+去追寻便好，哪怕是片刻的须臾。", "末吉+加油哦(ﾉ´▽｀)ﾉ♪", "中吉+奖励你个表情ヾ(๑╹◡╹)ﾉ","中吉+好好学习(๑´ㅂ`๑) ","中吉+你开心了吗(ﾉ´▽｀)ﾉ♪","中吉+_(¦3」∠)_","末吉+罒ω罒","末吉+〒▽〒","末吉+(╯﹏╰)b","末吉+ o(TωT)o ","末吉+(ಥ﹏ಥ)","末吉+┭┮﹏┭┮","中吉+原神，启动！！！！！","嘻嘻嘻","中吉+普通","中吉+嗨嗨(￣▽￣)／","末吉+(￣▽￣)~*","中吉+想不出来了","中吉+实在想不出什么了","彩蛋:为世上所有的美好而战！","中吉+崩铁，启动！！！","燃起来了","躺平￣ω￣=","谢谢惠顾","线性回归你学了吗？","纳西妲有点撒娇o(*￣3￣)o ","终于要写完了","鸟儿本身没有枷锁，又是什么牵住了我的命运","我们都知道，这世界早已无法拯救。可我们，还是必须成为英雄。","曾经有巨大的梦在这里破壳而出，也有无数的灵魂在这里消融。","嘿嘿嘿嘿hi，嘿嘿嘿嘿嘿额hi，额hi，恶嘿嘿额黑hi","大奖"];
-  var intervalId; // 用于存储setInterval的ID
-  
-  // 开始滚动名字
-  function startRandomNames() {
-    intervalId = setInterval(function() {
-      var randomIndex = Math.floor(Math.random() * names.length);
-      document.getElementById('nameDisplay').innerText = names[randomIndex];
-    }, 100); // 每100毫秒更新一次名字
-  
-    document.getElementById('startButton').disabled = true;
-    document.getElementById('stopButton').disabled = false;
-  }
-  
-  // 停止滚动名字
-  function stopRandomNames() {
-    clearInterval(intervalId);
-  
-    document.getElementById('startButton').disabled = false;
-    document.getElementById('stopButton').disabled = true;
-  }
-  
-  // 给按钮添加事件监听器
-  document.getElementById('startButton').addEventListener('click', startRandomNames);
-  document.getElementById('stopButton').addEventListener('click', stopRandomNames);
 
-  // 选择页面上所有的按钮
-  </script>
-<!-- 随机点名器的JavaScript代码 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>破扣扣0-0</title>
+    <link rel="icon" href="image/github-fill bule.svg" 
+        type="images/x-icon">
+    <link rel="shortcut icon" 
+        href="image/github-fill bule.svg" type="images/x-icon">
+    <!-- 引入字体图标 -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="shell close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="image/illust_117104321_20240417_164707.jpg" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">我是想大润发</span>
+                    <span class="software">-᯽᯽᯽᯽-</span>
+                </div>
+            </div>
+            <i class="iconfont icon-xiangyoujiantou toggle"></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="https://www.github.com/">
+                            <i class="fab fa-github icon"></i>
+                            <span class="text nac-text">GitHub</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://www.discord.com/">
+                            <i class="fab fa-discord icon"></i>
+                            <span class="text nac-text">Discord</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://im.qq.com/">
+                            <i class="fab fa-qq icon"></i>
+                            <span class="text nac-text">QQ</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://www.apple.com/">
+                            <i class="fab fa-apple icon"></i>
+                            <span class="text nac-text">Apple</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://www.microsoft.com/">
+                            <i class="fab fa-microsoft icon"></i>
+                            <span class="text nac-text">Microsoft</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="https://www.bilibili.com/">
+                            <i class="fab fa-bilibili icon"></i>
+                            <span class="text nac-text">哔哩哔哩</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="2.html">
+                            <i class="fab fa-Personal icon"></i>
+                            <span class="text nac-text">About Myself</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+    </nav>
 
 </body>
+
+
+<script>
+
+    const body = document.querySelector('body'),
+        shell = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+    // 点击toggle元素时触发事件
+    toggle.addEventListener("click", () => {
+        // 切换shell元素的close类
+        shell.classList.toggle("close");
+    })
+    // 点击searchBtn元素时触发事件
+    searchBtn.addEventListener("click", () => {
+        // 移除shell元素的close类
+        shell.classList.remove("close");
+    })
+
+</script>
+
+<body>
+
+    <script>
+      window.onload = function() {
+          var video = document.getElementById('bgVideo');
+          document.body.addEventListener('click', function() {
+              video.muted = false;
+          }, false);
+      };
+    </script>
+    <div class="name-container">
+      <!-- 随机点名器的内容 -->
+    </div>
+    <div class="container">
+    
+      <div class="h1"> 
+      <h1>᯽ᮮᮯ᮱ᮼ᯽</h1>
+        </div> <div class="name-container">
+        <div id="nameDisplay">⌚点击开始⌚</div></div>
+        <div class="button-container">
+        <button id="startButton">₿开始₿</button>
+        <button id="stopButton" disabled>₿停止₿</button>
+        </div>
+      
+    </div>  
+      <script>
+      // 名字列表
+      var names = ["中吉+今天还要努力呀！！", "大吉+运气不戳٩(๑❛ᴗ❛๑)۶", "中吉+去追寻便好，哪怕是片刻的须臾。", "末吉+加油哦(ﾉ´▽｀)ﾉ♪", "中吉+奖励你个表情ヾ(๑╹◡╹)ﾉ","中吉+好好学习(๑´ㅂ`๑) ","中吉+你开心了吗(ﾉ´▽｀)ﾉ♪","中吉+_(¦3」∠)_","末吉+罒ω罒","末吉+〒▽〒","末吉+(╯﹏╰)b","末吉+ o(TωT)o ","末吉+(ಥ﹏ಥ)","末吉+┭┮﹏┭┮","中吉+原神，启动！！！！！","嘻嘻嘻","中吉+普通","中吉+嗨嗨(￣▽￣)／","末吉+(￣▽￣)~*","中吉+想不出来了","中吉+实在想不出什么了","彩蛋:为世上所有的美好而战！","中吉+崩铁，启动！！！","燃起来了","躺平￣ω￣=","谢谢惠顾","线性回归你学了吗？","纳西妲有点撒娇o(*￣3￣)o ","终于要写完了","鸟儿本身没有枷锁，又是什么牵住了我的命运","曾经有巨大的梦在这里破壳而出，也有无数的灵魂在这里消融。" ];
+      var intervalId; // 用于存储setInterval的ID
+      
+      // 开始滚动名字
+      function startRandomNames() {
+        intervalId = setInterval(function() {
+          var randomIndex = Math.floor(Math.random() * names.length);
+          document.getElementById('nameDisplay').innerText = names[randomIndex];
+        }, 100); // 每100毫秒更新一次名字
+      
+        document.getElementById('startButton').disabled = true;
+        document.getElementById('stopButton').disabled = false;
+      }
+      
+      // 停止滚动名字
+      function stopRandomNames() {
+        clearInterval(intervalId);
+      
+        document.getElementById('startButton').disabled = false;
+        document.getElementById('stopButton').disabled = true;
+      }
+      
+      // 给按钮添加事件监听器
+      document.getElementById('startButton').addEventListener('click', startRandomNames);
+      document.getElementById('stopButton').addEventListener('click', stopRandomNames);
+    
+      // 选择页面上所有的按钮
+      </script>
+    <!-- 随机点名器的JavaScript代码 -->
+    
+    </body>
+
 </html>
