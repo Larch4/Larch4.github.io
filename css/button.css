@@ -1,0 +1,27 @@
+button{
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    background-size: 300% 100%;
+    color: white; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    transition: background-position 0.5s ease;
+    position: fixed;
+    right:5%;
+    bottom: 5%;
+    margin-bottom: 5%; /* 与底部保持固定距离 */
+
+}
+
+button:hover {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.767);
+    background-position: 100% 0;
+}
+button:active {
+    background-position: 200% 0;
+    border: 2px solid black;
+}
