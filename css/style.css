@@ -29,8 +29,8 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50%;
     background:linear-gradient(to right, #8291dc,#613c8f); /* 设置蓝色背景 */
-    transform: translate(-20%, -10%); /* 使用transform偏移自身的50%来居中 */
     border-radius: 100px; /* 设置边角的圆润度 */
     opacity:0.5; /*设置50%的透明效果*/
     z-index: 0; /* 确保内容在视频上方 */
