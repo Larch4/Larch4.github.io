@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../image/github-fill bule.svg" 
+        type="images/x-icon">
+    <link rel="shortcut icon" 
+        href="../image/github-fill bule.svg" type="images/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Video Example</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+        button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer" class="video-container">
+        <video id="myVideo" controls>
+            <source src="《原神》动画短片———「未行之路」.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="toggleFullScreen()">Toggle Full Screen</button>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            const videoContainer = document.getElementById('videoContainer');
+            if (!document.fullscreenElement) {
+                videoContainer.classList.add('fullscreen');
+                if (videoContainer.requestFullscreen) {
+                    videoContainer.requestFullscreen();
+                } else if (videoContainer.mozRequestFullScreen) { // Firefox
+                    videoContainer.mozRequestFullScreen();
+                } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    videoContainer.webkitRequestFullscreen();
+                } else if (videoContainer.msRequestFullscreen) { // IE/Edge
+                    videoContainer.msRequestFullscreen();
+                }
+            } else {
+                document.exitFullscreen();
+                videoContainer.classList.remove('fullscreen');
+            }
+        }
+    </script>
+</body>
+</html>
