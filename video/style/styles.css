@@ -273,11 +273,6 @@ header {
     padding: 0 20px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
 nav a:link {
     color: white;
     text-decoration: none;
