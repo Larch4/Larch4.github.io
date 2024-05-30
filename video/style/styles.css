@@ -273,25 +273,6 @@ header {
     padding: 0 20px;
 }
 
-nav a:link {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-nav a:visited {
-    color: #d1e7ff;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: #ffeb3b;
-}
-
-nav a:active {
-    color: #ff9800;
-}
-
 main {
     padding: 20px;
 }
@@ -303,11 +284,15 @@ main {
 }
 
 .video-card {
+    break-inside: avoid; /* 防止卡片被分割 */
+    margin-bottom: 20px; /* 卡片底部间距 */
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    display: inline-block;
+    width: 100%;
 }
 
 .video-card a {
@@ -373,6 +358,10 @@ footer {
     padding: 20px;
         background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
+    column-count: 3; /* 设置列数 */
+    column-gap: 20px; /* 设置列间距 */
+    width: 90%; /* 调整宽度以适应不同屏幕 */
+    margin: 0 auto; /* 居中 */
 }
 
 @media (max-width: 768px) {
