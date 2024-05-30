@@ -273,8 +273,17 @@ header {
     padding: 0 20px;
 }
 
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 main {
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    overflow: auto;
 }
 
 .video-grid {
@@ -284,15 +293,14 @@ main {
 }
 
 .video-card {
-    break-inside: avoid; /* 防止卡片被分割 */
-    margin-bottom: 20px; /* 卡片底部间距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     cursor: pointer;
-    display: inline-block;
-    width: 100%;
 }
 
 .video-card a {
@@ -352,16 +360,16 @@ footer {
 
 /**/
 .box2 {
-    width: 780px;
-    height: 790px;
+    position: relative ;
+    left: 4%;
+    width: 70%;
+    height: 80%;
+    right: 20%;
     border-radius: 50px;
     padding: 20px;
+    overflow: auto;
         background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
-    column-count: 3; /* 设置列数 */
-    column-gap: 20px; /* 设置列间距 */
-    width: 90%; /* 调整宽度以适应不同屏幕 */
-    margin: 0 auto; /* 居中 */
 }
 
 @media (max-width: 768px) {
@@ -477,15 +485,21 @@ footer {
     }
 
     .box2 {
-        position: fixed;
-        left: 20%;
-        width: 70%;
-        height: auto;
-        right: 20%;
+        position: absolute ;
+        width: 100%;
+        height: 80%;
+        padding-top: 60px;
+        overflow: auto;
+        border-radius: 0px;
     }
 /**/
     main {
-        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 60px;
+        overflow: auto;
     }
     
     .video-grid {

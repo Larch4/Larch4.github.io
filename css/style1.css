@@ -33,6 +33,8 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     animation: gradient 15s ease infinite;
+    overflow: auto;
+    padding-bottom: 20px;
 }
 
 @keyframes gradient {
@@ -241,10 +243,11 @@ header {
     border-radius: 50px;
     z-index: 0;
     width: 80%;
-    height: 50%;
+    height: 600px;
     max-height: 400px;
     max-width: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
     padding: 20px;
 }
 
@@ -298,12 +301,6 @@ header {
 @media (max-width: 768px) {
     .shell {
         width: 95%;
-    }
-
-    .container {
-        width: 90%;
-        height: auto;
-        padding: 10px;
     }
 
     .title {
@@ -396,10 +393,11 @@ header {
         top:30%;
         background-color: #cdeefd;
         border-radius: 50px;
-        width: 200px;
-        height: 300px;
+        width: 60%;
+        height: 400px;
         max-height: 400px;
         max-width: 400px;
+        padding: 15px;
     }
 
     .box {
@@ -408,7 +406,7 @@ header {
         top: 50%;
         transform: translate(-45%, -40%);
         text-align: center;
-        width: 300px;
+        width: 200px;
         height: 200px;
         margin: 20px auto;
     }
