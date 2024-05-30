@@ -10,8 +10,8 @@ shell.classList.toggle("close");
 /* 视频卡片 */
 document.addEventListener('DOMContentLoaded', () => {
     const videos = [
-        { title: "「薪炎永燃」.mp4", thumbnail: "./video/image/d1804ccfdd5fbff89e1013c3b309a139755f53a3.jpg@320w_200h_1c_!web-space-upload-video.jpg", videoURL:"./video/video1/index.html", views: 12000 },
-        { title: "《原神》动画短片「未行之路」.mp4", thumbnail: "./video/image/2634018298737cecefaed6f4f4be500ca375db07.jpg", videoURL:"./video/video2/index.html", views: 34000 },
+        { title: "「薪炎永燃」", thumbnail: "./video/image/d1804ccfdd5fbff89e1013c3b309a139755f53a3.jpg@320w_200h_1c_!web-space-upload-video.jpg", videoURL:"./video/video1/index.html", views: 12000 },
+        { title: "《原神》动画短片「未行之路」", thumbnail: "./video/image/2634018298737cecefaed6f4f4be500ca375db07.jpg", videoURL:"./video/video2/index.html", views: 34000 },
         { title: "微视频", thumbnail: "./video/image/illust_116416925_20240519_175605.jpg", videoURL:"./video/video3/index.html", views: 56000 },
         // 更多视频数据
     ];
