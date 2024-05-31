@@ -263,6 +263,11 @@ header {
 }
 
 /* 视频卡片 */
+h2 {
+    padding-left: 20px;
+    color: #cdeefd;
+}
+
 .site-header {
     background-color: #00a1d6;
     color: white;
