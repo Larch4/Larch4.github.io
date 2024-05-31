@@ -279,6 +279,13 @@ header {
     font-weight: bold;
 }
 
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000080;
+}
+
 main {
     display: flex;
     align-items: center;
