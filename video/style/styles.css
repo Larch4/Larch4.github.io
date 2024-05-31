@@ -263,12 +263,6 @@ header {
 }
 
 /* 视频卡片 */
-h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #cdeefd;
-}
 
 .site-header {
     background-color: #00a1d6;
